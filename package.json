@@ -13,7 +13,7 @@
     "languages": [{
       "id": "lua",
       "aliases": ["script", "lua"],
-      "extensions": [".script"],
+      "extensions": [".script", ".lua"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
