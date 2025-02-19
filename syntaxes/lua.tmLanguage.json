@@ -3,13 +3,47 @@
 	"name": "script",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#comments"
 		},
 		{
-			"include": "#strings"
+			"include": "#keyword"
+		},
+		{
+			"include": "#function"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#bollean"
+		},
+		{
+			"include": "#arguments"
+		},
+		{
+			"include": "#string"
 		}
 	],
 	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.lua",
+					"begin": ";",
+					"end": "\n",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.paren.open"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.paren.close"
+						}
+					}
+				}
+			]
+		},
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.lua",
