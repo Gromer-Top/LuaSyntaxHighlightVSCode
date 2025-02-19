@@ -1,0 +1,25 @@
+{
+  "name": "lua-syntax-highlight",
+  "displayName": "Lua Syntax Highlight",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "lua",
+      "aliases": ["script", "lua"],
+      "extensions": [".script"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "lua",
+      "scopeName": "source.script",
+      "path": "./syntaxes/lua.tmLanguage.json"
+    }]
+  }
+}
