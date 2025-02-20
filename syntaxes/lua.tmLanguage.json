@@ -6,22 +6,10 @@
 			"include": "#comments"
 		},
 		{
-			"include": "#keyword"
+			"include": "#keywords"
 		},
 		{
-			"include": "#function"
-		},
-		{
-			"include": "#number"
-		},
-		{
-			"include": "#bollean"
-		},
-		{
-			"include": "#arguments"
-		},
-		{
-			"include": "#string"
+			"include": "#strings"
 		}
 	],
 	"repository": {
@@ -29,7 +17,7 @@
 			"patterns": [
 				{
 					"name": "comment.line.lua",
-					"begin": ";",
+					"begin": "--",
 					"end": "\n",
 					"beginCaptures": {
 						"0": {
@@ -47,7 +35,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.lua",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(if|while|for|return|then)\\b"
 			}]
 		},
 		"strings": {
