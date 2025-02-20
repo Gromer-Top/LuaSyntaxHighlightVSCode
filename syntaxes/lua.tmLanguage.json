@@ -6,17 +6,32 @@
 			"include": "#comments"
 		},
 		{
-			"include": "#keywords"
+			"include": "#keyword"
 		},
 		{
-			"include": "#strings"
+			"include": "#function"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#property"
+		},
+		{
+			"include": "#classInheritance"
+		},
+		{
+			"include": "#arguments"
+		},
+		{
+			"include": "#string"
 		}
 	],
 	"repository": {
 		"comments": {
 			"patterns": [
 				{
-					"name": "comment.line.lua",
+					"name": "comment.line.ltx",
 					"begin": "--",
 					"end": "\n",
 					"beginCaptures": {
@@ -32,20 +47,59 @@
 				}
 			]
 		},
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.lua",
-				"match": "\\b(if|while|for|return|then)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.lua",
-			"begin": "\"",
-			"end": "\"",
+		"function": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.lua",
-					"match": "\\\\."
+					"name": "support.function",
+					"match": "(\\=|\\!)\\w+"
+				}
+			]
+		},
+		"number": {
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "(?<!\\w)(\\-)?\\d+(\\.\\d+)?(?!\\w)"
+				}
+			]
+		},
+		"property": {
+			"patterns": [
+				{
+					"name": "variable.other.constant.property",
+					"match": "^(\\s*?)?[\\w\\$]+?(?=(\\s*?)?(\\=|\\n))"
+				}
+			]
+		},
+		"string": {
+			"patterns": [
+				{
+					"name": "variable.other.constant.property",
+					"match": "[\\w\\#\"\\*\\.\\@\\$\\\\]+"
+				}
+			]
+		},
+		"keyword": {
+			"patterns": [
+				{
+					"name": "keyword.control",
+					"match": "\\b(nil|true|false|complete|fail|reversed)\\b"
+				}
+			]
+		},
+		"arguments": {
+			"patterns": [
+				{
+					"name": "variable",
+					"match": "(?<=(\\(|:))\\w+(?=(:|\\)))"
+				}
+			]
+		},
+		"classInheritance": {
+			"patterns": [
+				{
+					"name": "support.class",
+					"match": "(?<=\\]\\:)\\w+"
 				}
 			]
 		}
